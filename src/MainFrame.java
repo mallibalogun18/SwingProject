@@ -6,14 +6,14 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
 
     //all components variables added to the GUI should be set as private
-    private JTextArea jTextArea;
+    private TextPanel jTextArea;
     private JButton jButton;
 
     public MainFrame(){
         super("Main Frame");
         setLayout(new BorderLayout());
 
-        jTextArea = new JTextArea();
+        jTextArea = new TextPanel();
         jButton = new JButton("Click Me!");
 
         add(jTextArea, BorderLayout.CENTER);
@@ -27,7 +27,8 @@ public class MainFrame extends JFrame {
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jTextArea.append(jButton.getText()+"\n");
+                jTextArea.appendText(jButton.getText()+"\n");
+//                jTextArea.append(jButton.getText()+"\n");
             }
         });
 
