@@ -87,31 +87,8 @@ public class FormPanel extends JPanel implements ActionListener {
         c.gridy = 2;
         add(clearButton,c);
 
-
         clearButton.addActionListener(this);
         enterButton.addActionListener(this);
-
-//        clearButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                nameField.setText("");
-//                occupationField.setText("");
-//            }
-//        });
-//
-//        enterButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                if(nameField.getText().isEmpty() || occupationField.getText().isEmpty()){
-//                JOptionPane.showMessageDialog(null,"Enter value in each field","Warning",2);
-//                } else {
-//                    String text = "Name: "+ nameField.getText()+"\nOccupation: "+ occupationField.getText();
-//                    stringListiner.textEmitted(text);
-//                }
-//
-//            }
-//        });
     }
 
     public void setStringListiner(StringListiner listiner){
