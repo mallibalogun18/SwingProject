@@ -8,6 +8,7 @@ public class TextPanel extends JPanel {
     public TextPanel(){
         super();
         jTextArea = new JTextArea();
+        jTextArea.setForeground(Color.BLUE);
 
         setLayout(new BorderLayout());
         //the new JScrollPane will be embedded in the JPanel, while it wraps the JTextArea variable

@@ -9,7 +9,7 @@ public class MainFrame extends JFrame {
     private FormPanel formPanel;
 
     public MainFrame(){
-        super("Main Frame");
+        super("Employment GUI");
         setLayout(new BorderLayout());
 
         jTextArea = new TextPanel();
@@ -30,9 +30,16 @@ public class MainFrame extends JFrame {
             public void textEmitted(String text) {
                 if (text == "OK"){
                     jTextArea.appendText(text+"\n");
-                } else if (text == "Clear"){
+                } else if (text == "Clear Screen"){
                     jTextArea.cleatTextArea();
                 }
+            }
+        });
+
+        formPanel.setStringListiner(new StringListiner() {
+            @Override
+            public void textEmitted(String text) {
+                jTextArea.appendText(text+"\n");
             }
         });
 

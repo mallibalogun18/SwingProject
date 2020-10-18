@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class ToolBar extends JPanel implements ActionListener {
 
     private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton clearScreen;
     private StringListiner stringListiner;
 
     public ToolBar(){
@@ -17,7 +17,7 @@ public class ToolBar extends JPanel implements ActionListener {
 //        setBorder(BorderFactory.createCompoundBorder(outterBorder,innerBorder));
 
        buttonOK = new JButton("OK");
-       buttonCancel = new JButton("Clear");
+       clearScreen = new JButton("Clear Screen");
 
        //The FLowLayout is a layout manager that set the component added next to each other. You can manipulate the location
         //of the components in the layout by passing the FlowLayout.(LEFT or RIGHT) in the constructor. You cannot
@@ -25,9 +25,9 @@ public class ToolBar extends JPanel implements ActionListener {
        setLayout(new FlowLayout(FlowLayout.CENTER));
 
        buttonOK.addActionListener(this);
-       buttonCancel.addActionListener(this);
+       clearScreen.addActionListener(this);
        add(buttonOK);
-       add(buttonCancel);
+       add(clearScreen);
     }
 
     public void setStringListiner(StringListiner listiner){
