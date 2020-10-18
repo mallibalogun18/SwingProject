@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FormPanel extends JPanel {
+public class FormPanel extends JPanel implements ActionListener {
 
     private JLabel nameLabel;
     private JLabel occupationLabel;
@@ -87,31 +87,52 @@ public class FormPanel extends JPanel {
         c.gridy = 2;
         add(clearButton,c);
 
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                nameField.setText("");
-                occupationField.setText("");
-            }
-        });
 
-        enterButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        clearButton.addActionListener(this);
+        enterButton.addActionListener(this);
 
-                if(nameField.getText().isEmpty() || occupationField.getText().isEmpty()){
-                JOptionPane.showMessageDialog(null,"Enter value in each field","Warning",2);
-                } else {
-                    String text = "Name: "+ nameField.getText()+"\nOccupation: "+ occupationField.getText();
-                    stringListiner.textEmitted(text);
-                }
-
-            }
-        });
+//        clearButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                nameField.setText("");
+//                occupationField.setText("");
+//            }
+//        });
+//
+//        enterButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//                if(nameField.getText().isEmpty() || occupationField.getText().isEmpty()){
+//                JOptionPane.showMessageDialog(null,"Enter value in each field","Warning",2);
+//                } else {
+//                    String text = "Name: "+ nameField.getText()+"\nOccupation: "+ occupationField.getText();
+//                    stringListiner.textEmitted(text);
+//                }
+//
+//            }
+//        });
     }
 
     public void setStringListiner(StringListiner listiner){
         this.stringListiner = listiner;
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton button = (JButton)e.getSource();
+
+        if (button.getText() == "Submit"){
+            if(nameField.getText().isEmpty() || occupationField.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null,"Enter value in each field","Warning",2);
+            } else {
+                String text = "Name: "+ nameField.getText()+"\nOccupation: "+ occupationField.getText();
+                stringListiner.textEmitted(text);
+            }
+        }else if (button.getText() == "Clear"){
+            nameField.setText("");
+            occupationField.setText("");
+        }
+
+    }
 }
