@@ -10,7 +10,7 @@ public class TextPanel extends JPanel {
         jTextArea = new JTextArea();
 
         setLayout(new BorderLayout());
-        //the new JScrollPane will give the JPanel a scroll pane that wraps around the JTextArea
+        //the new JScrollPane will be embedded in the JPanel, while it wraps the JTextArea variable
         add(new JScrollPane(jTextArea), BorderLayout.CENTER);
     }
 
