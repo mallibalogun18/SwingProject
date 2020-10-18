@@ -15,7 +15,12 @@ public class TextPanel extends JPanel {
     }
 
     public void appendText(String text){
-        jTextArea.append(text);
+            jTextArea.append(text);
+    }
+
+    public void cleatTextArea(){
+        jTextArea.selectAll();
+        jTextArea.replaceSelection("");
     }
 
 }
