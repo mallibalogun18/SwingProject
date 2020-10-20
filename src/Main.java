@@ -9,7 +9,7 @@ public class Main {
             @Override
             public void run() {
                 JFrame jFrame = new JFrame("Hello. Welcome to the Swing Project");
-                jFrame.setSize(600,600);
+                jFrame.setSize(700,150);
                 jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 jFrame.setVisible(true);
                 jFrame.setLocationRelativeTo(null);

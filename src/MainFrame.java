@@ -28,9 +28,7 @@ public class MainFrame extends JFrame {
         toolBar.setStringListiner(new StringListiner() {
             @Override
             public void textEmitted(String text) {
-                if (text == "OK"){
-                    jTextArea.appendText(text+"\n");
-                } else if (text == "Clear Screen"){
+               if (text == "Clear Screen"){
                     jTextArea.cleatTextArea();
                 }
             }
