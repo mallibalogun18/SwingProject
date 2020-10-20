@@ -25,8 +25,8 @@ public class ToolBar extends JPanel implements ActionListener {
        add(clearScreen);
     }
 
-    public void setStringListiner(StringListiner listiner){
-        this.stringListiner = listiner;
+    public void setStringListener(StringListiner listener){
+        this.stringListiner = listener;
     }
 
     @Override

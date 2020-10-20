@@ -20,12 +20,12 @@ public class MainFrame extends JFrame {
         add(jTextArea, BorderLayout.CENTER);
         add(formPanel, BorderLayout.WEST);
 
-        setSize(600,400);
+        setSize(700,400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
-        toolBar.setStringListiner(new StringListiner() {
+        toolBar.setStringListener(new StringListiner() {
             @Override
             public void textEmitted(String text) {
                if (text == "Clear Screen"){
@@ -34,7 +34,7 @@ public class MainFrame extends JFrame {
             }
         });
 
-        formPanel.setStringListiner(new StringListiner() {
+        formPanel.setStringListener(new StringListiner() {
             @Override
             public void textEmitted(String text) {
                 jTextArea.appendText(text+"\n");

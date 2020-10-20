@@ -24,7 +24,7 @@ public class FormPanel extends JPanel implements ActionListener {
         super();
         //set the size of the FormPanel using the Dimesion class
         Dimension dimension = getPreferredSize();
-        dimension.width = 325;
+        dimension.width = 400;
         setPreferredSize(dimension);
 
         nameLabel = new JLabel("First Name: ");
@@ -174,8 +174,8 @@ public class FormPanel extends JPanel implements ActionListener {
         enterButton.addActionListener(this);
     }
 
-    public void setStringListiner(StringListiner listiner){
-        this.stringListiner = listiner;
+    public void setStringListener(StringListiner listener){
+        this.stringListiner = listener;
     }
 
     @Override
@@ -196,6 +196,7 @@ public class FormPanel extends JPanel implements ActionListener {
             nameField.setText("");
             occupation.setText("");
             ssnField.setText("");
+            citizenCheck.setSelected(false);
         }
 
     }
