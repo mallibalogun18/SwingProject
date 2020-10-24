@@ -24,7 +24,7 @@ public class FormPanel extends JPanel implements ActionListener {
         super();
         //set the size of the FormPanel using the Dimension class
         Dimension dimension = getPreferredSize();
-        dimension.width = 400;
+        dimension.width = 350;
         setPreferredSize(dimension);
 
         nameLabel = new JLabel("First Name: ");

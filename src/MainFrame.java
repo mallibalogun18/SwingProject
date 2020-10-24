@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
@@ -56,18 +58,36 @@ public class MainFrame extends JFrame {
         JMenuBar jMenuBar = new JMenuBar();
         JMenu file = new JMenu("File");
         JMenu edit = new JMenu("Edit");
+        JMenu show = new JMenu("Show");
+        JMenuItem exit = new JMenuItem("Exit");
         JMenu newMenu = new JMenu("New");
         JMenuItem close = new JMenuItem("Close");
-
+        JCheckBoxMenuItem showPanel = new JCheckBoxMenuItem("Show Panel");
+        showPanel.setSelected(true);
         JMenuItem project = new JMenuItem("Project");
         JMenuItem module = new JMenuItem("Module");
 
         newMenu.add(project);
         newMenu.add(module);
+        show.add(showPanel);
+        edit.add(show);
         file.add(newMenu);
         file.add(close);
+        file.addSeparator();
+        file.add(exit);
         jMenuBar.add(file);
         jMenuBar.add(edit);
+
+        showPanel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBoxMenuItem menuItem = (JCheckBoxMenuItem)e.getSource();
+
+                formPanel.setVisible(menuItem.isSelected());
+            }
+        });
+
+
         return jMenuBar;
     }
 
