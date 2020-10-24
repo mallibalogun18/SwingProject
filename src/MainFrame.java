@@ -12,6 +12,8 @@ public class MainFrame extends JFrame {
         super("Employment GUI");
         setLayout(new BorderLayout());
 
+        setJMenuBar(createMenuBar());
+
         jTextArea = new TextPanel();
         toolBar = new ToolBar();
         formPanel = new FormPanel();
@@ -48,4 +50,26 @@ public class MainFrame extends JFrame {
             jTextArea.append(text+"\n");
         });*/
     }
+
+    private JMenuBar createMenuBar(){
+
+        JMenuBar jMenuBar = new JMenuBar();
+        JMenu file = new JMenu("File");
+        JMenu edit = new JMenu("Edit");
+        JMenu newMenu = new JMenu("New");
+        JMenuItem close = new JMenuItem("Close");
+
+        JMenuItem project = new JMenuItem("Project");
+        JMenuItem module = new JMenuItem("Module");
+
+        newMenu.add(project);
+        newMenu.add(module);
+        file.add(newMenu);
+        file.add(close);
+        jMenuBar.add(file);
+        jMenuBar.add(edit);
+        return jMenuBar;
+    }
+
+
 }

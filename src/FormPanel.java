@@ -12,17 +12,17 @@ public class FormPanel extends JPanel implements ActionListener {
     private JTextField occupation;
     private JButton enterButton;
     private JButton clearButton;
-    private StringListiner stringListiner;
     private JComboBox empBox;
     private JCheckBox citizenCheck;
     private JLabel citizenLabel;
     private JLabel degreeLabel;
     private JLabel ssnLabel;
     private JTextField ssnField;
+    private StringListiner stringListiner;
 
     public FormPanel(){
         super();
-        //set the size of the FormPanel using the Dimesion class
+        //set the size of the FormPanel using the Dimension class
         Dimension dimension = getPreferredSize();
         dimension.width = 400;
         setPreferredSize(dimension);
@@ -64,7 +64,7 @@ public class FormPanel extends JPanel implements ActionListener {
         defaultComboBoxModel.addElement("Doctoral");
         empBox.setModel(defaultComboBoxModel);
 
-        empBox.setSelectedIndex(3);
+        empBox.setSelectedIndex(0);
 
 
 
@@ -128,7 +128,7 @@ public class FormPanel extends JPanel implements ActionListener {
         c.insets =new Insets(0,0,0,0);
         add(empBox,c);
 
-        /////////////////third row /////////////////////////////
+        /////////////////fourth row /////////////////////////////
         c.weightx = 1;
         c.weighty = .2;
 
@@ -143,9 +143,9 @@ public class FormPanel extends JPanel implements ActionListener {
         c.insets =new Insets(0,0,0,0);
         add(citizenCheck,c);
 
-        /////////////////fourth row /////////////////////////////
+        /////////////////fifth row /////////////////////////////
         c.weightx = 1;
-        c.weighty = .2;
+        c.weighty = .1;
 
         c.gridx = 0;
         c.gridy = 4;
@@ -158,16 +158,17 @@ public class FormPanel extends JPanel implements ActionListener {
         c.insets =new Insets(0,0,0,0);
         add(ssnField,c);
 
-        /////////////////fifth row /////////////////////////////
+        /////////////////sixth row /////////////////////////////
         c.weightx = 1;
-        c.weighty = 2.0;
+        c.weighty = .2;
 
         c.gridx = 1;
         c.gridy = 5;
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
+        c.anchor = GridBagConstraints.LINE_END;
         add(enterButton,c);
         c.gridx = 2;
         c.gridy = 5;
+        c.anchor = GridBagConstraints.LINE_START;
         add(clearButton,c);
 
         clearButton.addActionListener(this);
@@ -196,7 +197,9 @@ public class FormPanel extends JPanel implements ActionListener {
             nameField.setText("");
             occupation.setText("");
             ssnField.setText("");
+            empBox.setSelectedIndex(0);
             citizenCheck.setSelected(false);
+            ssnField.setEnabled(false);
         }
 
     }
